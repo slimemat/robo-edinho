@@ -44,7 +44,7 @@ async function enviar(inputValue) {
     // regex to replace *asteriscs* with span tag
     const formattedResponse = resposta.replace(/\*(.*?)\*/g, (match, p1) => {
       
-      // remover destaque dos termos de robo
+      // remover destaque dos termos da blacklist do robo (forbiddenTerms)
       if (forbiddenTerms.includes(p1.toLowerCase())) {
         return match; // Retorna o termo original sem mudanças
       }
@@ -73,7 +73,7 @@ function gerarInput(term){
   $("#input").val("Quero saber mais sobre: " + term);
 }
 
-// Avatar images
+// images
 const avatarImages = [
   "pix/avatar/roboedinho1.png",
   "pix/avatar/roboedinho2.png",
@@ -106,7 +106,7 @@ $(document).ready(function () {
       // Avoiding spam (or trying lol)
       if (inputVal.length > 0 && !isSending) {
         isSending = true;
-        $(this).prop('disabled', true); // Disable input
+        $(this).prop('disabled', true); //disable input field
 
         // Call send message
         enviar(inputVal);        

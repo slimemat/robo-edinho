@@ -40,7 +40,26 @@ def chat():
 
     messages = [system_prompt] + history + [{"role": "user", "content": user_input}]
 
-    # Primeiro tenta usar OpenRouter
+    # Fallback: usa Groq com llama rapido
+    try:
+        groq_response = client_groq.chat.completions.create(
+            messages=messages,
+            model=GROQ_MODEL
+        )
+        resposta = groq_response.choices[0].message.content
+
+        return jsonify({
+            "choices": [
+                {"message": {"content": resposta}}
+            ]
+        })
+
+    except Exception as e:
+        print("Erro ao usar Groq:", str(e))
+        return jsonify({"error": "Erro nas duas APIs"}), 500
+
+    # fallback no openrouter (é melhor, mas demora mais)
+
     try:
         headers = {
             "Authorization": f"Bearer {OPENROUTER_KEY}",
@@ -64,23 +83,6 @@ def chat():
     except Exception as e:
         print("Erro ao usar OpenRouter:", str(e))
 
-    # Fallback: usa Groq
-    try:
-        groq_response = client_groq.chat.completions.create(
-            messages=messages,
-            model=GROQ_MODEL
-        )
-        resposta = groq_response.choices[0].message.content
-
-        return jsonify({
-            "choices": [
-                {"message": {"content": resposta}}
-            ]
-        })
-
-    except Exception as e:
-        print("Erro ao usar Groq:", str(e))
-        return jsonify({"error": "Erro nas duas APIs"}), 500
 
 
 if __name__ == "__main__":
