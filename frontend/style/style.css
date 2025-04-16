@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap');
+:root{
+    --border-cyan: 1.6px solid rgb(166, 231, 235); /* borda azul */
+    --border-cyan2: 1.6px solid rgb(202, 232, 234);/*borda azul 2 */
+    --cyan-soft-solor:  rgb(166, 231, 235);
+    --light-text: whitesmoke;
+    --bright-box:
+        inset 2px 2px 6px rgba(223, 247, 255, 0.697),   /* Realce no topo esquerdo */
+        inset -3px -3px 6px rgba(148, 255, 255, 0.267),  /* Sombra no canto inferior direito */
+        0 4px 10px rgba(58, 232, 255, 0.291);          /* Glow externo suave */
+
+    --average-glass: 
+        inset 2px 2px 6px rgba(223, 247, 255, 0.39),   /* Realce no topo esquerdo */
+        inset -3px -3px 6px rgba(148, 255, 255, 0.267),  /* Sombra no canto inferior direito */
+        0 4px 10px rgba(186, 58, 255, 0.271);          /* Glow externo suave */
+
+    --dim-box:
+        inset 1px 1px 3px rgba(180, 220, 230, 0.3),
+        inset -2px -2px 4px rgba(120, 180, 200, 0.2),
+        0 2px 5px rgba(40, 200, 220, 0.15); 
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+#bg-full {
+    background-image: url(../pix/night.png);
+    background-color: black;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 100vh;
+    padding: 2% 4%;
+}
+
+
+.my-rcol{
+    transform: translateY(-12px);
+    max-width: min-content;
+}
+
+.my-small{
+    font-size: 10px;
+    text-align: start;
+}
+
+.my-link{
+    color: #4f76c4
+}
+.my-link:hover{
+    color: var(--cyan-soft-solor);
+}
+
+.my-rounded{
+    border-radius: 12px;
+}
+
+.chat-bubble-received {
+    max-width: 75%;
+    width: fit-content;
+    align-self: flex-start;
+    background: rgba(57, 88, 146, 0.300);
+    box-shadow: var(--bright-box);
+    border: var(--border-cyan2);
+    border-radius: 18px 18px 18px 4px;
+    padding: 10px 14px;
+    margin-bottom: 12px;
+    color: var(--light-text);
+    font-size: 0.85rem;
+    text-align: justify;
+}
+
+.chat-bubble-sent{
+    max-width: 75%;
+    width: fit-content;
+    align-self: flex-start;
+    margin-left: auto;
+    background: rgba(255, 255, 255, 0.08);
+    border: var(--border-cyan2);
+    box-shadow: var(--dim-box);
+    border-radius: 18px 18px 4px 18px;
+    padding: 10px 14px;
+    margin-bottom: 12px;
+    color: var(--light-text);
+    font-size: 0.85rem;
+    text-align: justify;
+}
+  
+
+.frutinger-bg-dark{
+    background-color: rgba(255, 255, 255, 0.08);
+    background-image: linear-gradient(to bottom, #0084ff53, #54357f6b);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2); /* glow leve */
+}
+
+.frutinger-bg-dark2{
+    /*background-color: #e9fdffb8;*/
+    border: 1px solid black;
+    background-image: linear-gradient(to bottom, #08041198, #03030f98);
+}
+
+.avatar-frame{
+    width: 120px; height: 120px;
+    border-radius: 12px;
+}
+
+#next-avatar{
+    border-radius: 12px;
+    /*border: var(--border-cyan);*/
+
+    color: var(--light-text);
+
+    transition: ease-in-out 200ms;
+}
+
+#next-avatar:hover{
+    transform: translateY(-0.6px);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    box-shadow: var(--bright-box)
+
+}
+
+.my-hr{
+    width: 100%; 
+    background-color: #0f0d45;
+    box-shadow: var(--dim-box);
+    height: 1.6px;
+}
+
+#send-msg{
+    color: var(--light-text);
+    box-shadow: var(--average-glass);
+
+    transition: ease-in-out 200ms;
+}
+#send-msg:hover{
+    box-shadow: var(--bright-box);
+    transform: translateX(0.6px);
+}
+
+#avatar-ed{
+    background-image: url('../pix/avatar/roboedinho1.png');
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    border: var(--border-cyan2);
+
+    border-radius: 12px;
+}
+
+.glass-effect{
+    background-color: rgba(109, 199, 255, 0.647);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    
+
+  /* glass */
+  box-shadow: var(--average-glass)
+}
+
+#logo{
+    font-family: "Climate Crisis", sans-serif;
+    background: linear-gradient(135deg, #24e9e2, #4f76c4);
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent; /* Mais transparente, sem a opacidade dupla */
+
+    text-shadow:
+        1px 1px 0 rgba(255, 255, 255, 0.568),
+        -1px -1px 0 rgb(209, 237, 239),
+        2px 2px 6px rgba(133, 57, 255, 0.652); /* Menos difuso */
+
+  filter: drop-shadow(0 0 4px rgba(173, 216, 230, 0.4)); /* Mais leve */
+}
+
+.logo2{
+    text-shadow:
+        1px 1px 0 rgba(255, 255, 255, 0.6),
+        -1px -1px 0 rgb(58, 232, 255),
+        2px 2px 6px rgba(0, 0, 0, 0.3); /* Menos difuso */ 
+}
+
+.logo3{
+    font-weight: bold;
+
+    text-shadow:
+    1px 1px 0 rgba(0, 106, 255, 0.6),
+    -1px -1px 0 rgb(0, 144, 163),
+    2px 2px 6px rgba(0, 0, 0, 0.3); /* Menos difuso */
+    
+    color: whitesmoke;
+}
+
+/*scroll personalizado*/
+#resposta::-webkit-scrollbar {
+    width: 3px;
+}
+  
+#resposta::-webkit-scrollbar-track {
+background: rgba(138, 138, 138, 0.05); /* subtle transparency */
+border-radius: 12px;
+box-shadow: var(--dim-box); /* soft glassy inset shadow */
+}
+
+#resposta::-webkit-scrollbar-thumb {
+background: linear-gradient(180deg, rgba(183, 166, 235, 0.1), rgba(214, 137, 255, 0.1));
+border-radius: 10px;
+border: 0.6px solid rgba(255, 255, 255, 0.15);
+backdrop-filter: blur(4px);
+}
+
+#resposta::-webkit-scrollbar-thumb:hover {
+background: linear-gradient(180deg, rgba(223, 247, 255, 0.3), rgba(170, 255, 255, 0.3));
+}
+
+.dot {
+width: 6px;
+height: 6px;
+background-color: var(--light-text); /* Match your purple aesthetic */
+border-radius: 50%;
+margin: 0 2px;
+display: inline-block;
+animation: bounce 1.4s infinite ease-in-out both;
+}
+
+.dot:nth-child(2) {
+animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+0%, 80%, 100% {
+    transform: scale(0);
+    opacity: 0.4;
+}
+40% {
+    transform: scale(1);
+    opacity: 1;
+}
+}
+
+.highlight-term {
+    color: #4a90e2;
+    text-decoration: none;
+    cursor: pointer;
+}
+  
+.highlight-term:hover {
+    color: #1d62d1;
+}
+  
+  

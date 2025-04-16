@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Robo EDinho</title>
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+<div id="bg-full">
+  <div class="d-flex">
+    <h3 id="logo" class="mx-2">Robô<br><span class="logo2">Ed</span>inho</h3>
+    <h4 class="p-2 align-self-end logo3 ml-4">Converse com o robô EDinho!</h4>
+  </div>
+
+  <div class="container mt-2">
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+        <div class="d-flex my-rounded shadow px-3 py-2 frutinger-bg-dark" style="min-height: 400px;">
+          
+          <!-- chat (left) -->
+          <div class="flex-grow-1 me-4 d-flex flex-column justify-content-between">
+            Robô Edinho ChatBot
+            <!-- messages -->
+            <div id="resposta" class="mb-3 p-3 rounded frutinger-bg-dark2 overflow-auto" style="height: 300px;">
+              <!-- append chat bubbles -->
+              <div class="chat-bubble-received">
+                <span class="chat-text">Olá! Eu sou o Edinho, um robô criado para ajudar você a aprender mais sobre sustentabilidade, tecnologia e o mundo ao nosso redor. Sobre o que você quer conversar?</span>
+              </div>
+              
+            </div>
+  
+            <!-- input text -->
+            <div class="d-flex">
+              <input id="input" type="text" class="form-control me-2" placeholder="Digite sua mensagem..." value="Eu quero falar sobre tecnologia!"/>
+              <button id="send-msg" class="btn glass-effect" onclick="enviar()">➤</button>
+            </div>
+          </div>
+  
+          <!-- avatar options (right) -->
+          <div class="d-flex flex-column align-items-center ml-4 my-rcol">
+            <div id="avatar-ed" class="glass-effect avatar-frame bg-secondary mb-2"></div>
+            <button id="next-avatar" class="glass-effect btn btn-sm">⇄ mudar avatar</button>
+            <br>
+            <span class="my-hr"></span>
+            <span class="my-small text-muted mt-2">
+              Esta é uma ferramenta educativa criada por <a class="my-link" href="https://www.linkedin.com/in/matheus-bueno-garrido-449126200/" target="_blank">Matheus Bueno Garrido</a>, que combina IA generativa e lógica de decisão para gerar respostas interativas. Inspirado no chatbot "Robô ED", o Robô Edinho é uma homenagem não oficial, sem vínculo com os criadores originais.
+            </span>
+            
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+</div>  
+  <script src="js/script.js"></script>
+</body>
+</html>
