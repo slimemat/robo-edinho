@@ -37,8 +37,8 @@ async function enviar(inputValue) {
     //arr push: bot msg
     chatHistory.push({ role: "assistant", content: resposta });
     
-    if (chatHistory.length > 4) {
-      chatHistory = chatHistory.slice(-4);
+    if (chatHistory.length > 6) {
+      chatHistory = chatHistory.slice(-6);
     }
 
     // regex to replace *asteriscs* with span tag

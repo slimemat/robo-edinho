@@ -11,7 +11,7 @@ app = Flask(__name__)
 CORS(app)
 
 OPENROUTER_KEY = os.getenv("OPENROUTER_API_KEY") # chave guardada na configuracao
-GROQ_KEY = os.getenv("GROQ_API_KEY") # chave fallback
+GROQ_KEY = os.getenv("GROQ_API_KEY") 
 OPENROUTER_MODEL = "deepseek/deepseek-chat-v3-0324:free"  # modelo deepseek
 GROQ_MODEL = "llama-3.1-8b-instant"
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
@@ -40,7 +40,7 @@ def chat():
 
     messages = [system_prompt] + history + [{"role": "user", "content": user_input}]
 
-    # Fallback: usa Groq com llama rapido
+    # Fallback: usa Groq com llama (rapido)
     try:
         groq_response = client_groq.chat.completions.create(
             messages=messages,
