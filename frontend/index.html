@@ -17,16 +17,23 @@
   <div class="container mt-2">
     <div class="row justify-content-center">
       <div class="col-md-10">
-        <div class="d-flex my-rounded shadow px-3 py-2 frutinger-bg-dark" style="min-height: 400px;">
+        <div id="outer-window" class="d-flex my-rounded shadow px-3 py-2 frutinger-bg-dark">
           
           <!-- chat (left) -->
           <div class="flex-grow-1 me-4 d-flex flex-column justify-content-between">
             Robô Edinho ChatBot
             <!-- messages -->
-            <div id="resposta" class="mb-3 p-3 rounded frutinger-bg-dark2 overflow-auto" style="height: 300px;">
+            <div id="resposta" class="mb-3 p-3 rounded frutinger-bg-dark2 overflow-auto">
               <!-- append chat bubbles -->
               <div class="chat-bubble-received">
-                <span class="chat-text">Olá! Eu sou o Edinho, um robô criado para ajudar você a aprender mais sobre sustentabilidade, tecnologia e o mundo ao nosso redor. Sobre o que você quer conversar?</span>
+                <span class="chat-text">
+                  Olá! Eu sou o Edinho, um robô criado para ajudar você a aprender mais sobre sustentabilidade, tecnologia e o mundo ao nosso redor. Sobre o que você quer conversar? 
+                  Que tal 
+                  <span class="highlight-term" onclick="gerarInput('Sustentabilidade')">Sustentabilidade</span>, 
+                  <span class="highlight-term" onclick="gerarInput('Internet das Coisas')">Internet das Coisas</span>, 
+                  <span class="highlight-term" onclick="gerarInput('LGPD')">LGPD</span> ou 
+                  <span class="highlight-term" onclick="gerarInput('Inteligência Artificial')">Inteligência Artificial</span>.
+                </span>
               </div>
               
             </div>
@@ -54,6 +61,12 @@
       </div>
     </div>
   </div>
+  
+  <select id="modelo">
+    <option value="groq/llama3-70b-8192">Groq - LLaMA 3 70B (good)</option>
+    <option value="groq/llama-3.1-8b-instant">Groq - LLaMA 3.1 8B Instant (fastest)</option>
+    <option value="openrouter/deepseek/deepseek-chat-v3-0324:free">OpenRouter - DeepSeek Chat v3 (better, but slower)</option>
+  </select>
   
 
 </div>  

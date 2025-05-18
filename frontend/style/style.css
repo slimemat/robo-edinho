@@ -101,6 +101,10 @@ body{
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2); /* glow leve */
 }
 
+#outer-window{
+    height: 70vh;
+}
+
 .frutinger-bg-dark2{
     /*background-color: #e9fdffb8;*/
     border: 1px solid black;
@@ -117,7 +121,7 @@ body{
     /*border: var(--border-cyan);*/
 
     color: var(--light-text);
-
+    font-weight: lighter;
     transition: ease-in-out 200ms;
 }
 
@@ -134,12 +138,13 @@ body{
     background-color: #0f0d45;
     box-shadow: var(--dim-box);
     height: 1.6px;
+    margin: 8px 0px 8px 0px;
 }
 
 #send-msg{
     color: var(--light-text);
     box-shadow: var(--average-glass);
-
+    font-weight: lighter;
     transition: ease-in-out 200ms;
 }
 #send-msg:hover{
@@ -203,6 +208,10 @@ body{
     color: whitesmoke;
 }
 
+#resposta{
+    min-height: 80%;
+}
+
 /*scroll personalizado*/
 #resposta::-webkit-scrollbar {
     width: 3px;
@@ -264,4 +273,17 @@ animation-delay: 0.4s;
     color: #1d62d1;
 }
   
+
+#modelo{
+    border-radius: 8px;
+    border-style: double;
+    background-color: transparent;
+    box-shadow: var(--average-glass);
+	bottom: 10px;
+	position: absolute;
+	font-weight: lighter;
+	padding: 4px 0px 4px 10px;
+}
+
+
   

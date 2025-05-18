@@ -21,13 +21,15 @@ async function enviar(inputValue) {
   chatHistory.push({ role: "user", content: input });
 
   // termos para não destacar
-  const forbiddenTerms = ["bip", "bip bop", "bip-bop", "beep-bop", "dica", "beep"];
+  const forbiddenTerms = ["bip", "bip bop", "bip-bop", "beep-bop", "dica", "beep", "bip-bop!"];
+
+  const modeloSelecionado = $('#modelo').val();
 
   try {
     const res = await fetch("http://localhost:5000/api/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ message: input, history: chatHistory })
+      body: JSON.stringify({ message: input, history: chatHistory, model: modeloSelecionado })
     });
 
     const data = await res.json();
@@ -71,6 +73,7 @@ async function enviar(inputValue) {
 // the highlighted terms call this function
 function gerarInput(term){
   $("#input").val("Quero saber mais sobre: " + term);
+  $("#input").focus();
 }
 
 // images
